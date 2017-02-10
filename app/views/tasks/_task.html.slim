@@ -8,3 +8,6 @@
     br/
     b Status:
     =< task.status
+    br/
+    = link_to 'Edit', edit_task_path(task.id)
+    =< link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' } 

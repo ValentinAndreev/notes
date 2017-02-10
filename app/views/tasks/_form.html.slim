@@ -1,0 +1,6 @@
+= link_to 'Back', tasks_path
+p
+  = simple_form_for @task do |form|
+    = form.input :text, as: :text, row:5, required: true
+    = form.input :date, as: :datetime
+    = form.button :submit, class: 'btn btn-link'

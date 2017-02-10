@@ -2,7 +2,7 @@ doctype html
 html
   head
     meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
-    title Treenotes
+    title Notes
     = csrf_meta_tags
     = stylesheet_link_tag    'bootstrap.min'
     = javascript_include_tag 'bootstrap.min'
@@ -12,3 +12,4 @@ html
     .container
       p.notice= notice
       p.alert= alert
+      = yield
