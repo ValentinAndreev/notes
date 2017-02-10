@@ -1,4 +1,4 @@
-.task
+div id="#{task.id}"
   p
     b Task:
     =< task.text
@@ -9,5 +9,6 @@
     b Status:
     =< task.status
     br/
-    = link_to 'Edit', edit_task_path(task.id)
-    =< link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' } 
+    = link_to 'Edit', edit_task_path(task), remote: true
+    =< link_to 'Delete', task_path(task), method: :delete, data: { confirm: 'Are you sure?' }, remote: true
+    hr/

@@ -1,6 +1,9 @@
 = link_to 'Show tasks', '#', id: 'show-tasks'
 = link_to 'Close tasks', '#', id: 'close-tasks'
-=< link_to 'New', new_task_path
 hr/
 .tasks
-  = render @tasks
+  p
+    =< link_to 'New', new_task_path, remote: true
+  = render @tasks  
+= link_to 'Close form', '#', id: 'close'
+#form
