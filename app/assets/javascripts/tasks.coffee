@@ -7,14 +7,16 @@ $ ->
   $('#show-tasks').click ->
     $('#show-tasks').hide()
     $('#close-tasks').show()
-    $('.tasks').fadeIn()        
+    $('.tasks').fadeIn() 
+    $('#new').show()  
 
   $('#close-tasks').click ->
     $('#close-tasks').hide()
     $('#show-tasks').show()
     $('.tasks').fadeOut()      
     $('#form').hide()
-    $('#close').hide()      
+    $('#close').hide()
+    $('#new').hide()     
 
   $('#close').click ->   
     $('#close').hide()  
