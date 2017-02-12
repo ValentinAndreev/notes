@@ -1,0 +1,4 @@
+= simple_form_for [@plan, @plan.tasks.build], remote: true do |form|
+  = form.input :text, as: :text, input_html: {rows: '4'}, required: true
+  = form.input :date, as: :datetime
+  = form.button :submit, class: 'btn btn-link'

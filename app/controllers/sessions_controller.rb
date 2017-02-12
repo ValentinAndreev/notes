@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     @user = User.authenticate(params["/login"][:username], params["/login"][:password])
     if @user      
       session[:user_id] = @user.id
-      redirect_to '/', notice: 'Hi ' + @user.username
+      redirect_to '/', notice: "Hi #{@user.username}!"
     else
       redirect_to login_path, notice: 'Invalid username or password.'
     end

@@ -1,0 +1,3 @@
+= simple_form_for @plan, remote: true do |form|
+  = form.input :name, as: :text, required: true
+  = form.button :submit, class: 'btn btn-link'

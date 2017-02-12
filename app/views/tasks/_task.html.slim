@@ -9,6 +9,6 @@ div id="#{task.id}"
     b Executed?
     =< task.status
     br/
-    = link_to 'Edit', edit_task_path(task), remote: true
-    =< link_to 'Delete', task_path(task), method: :delete, data: { confirm: 'Are you sure?' }, remote: true
+    = link_to 'Edit', edit_plan_task_path(@plan.id, task), remote: true
+    =< link_to 'Delete', plan_task_path(@plan.id, task), method: :delete, data: { confirm: 'Are you sure?' }, remote: true
     hr/
