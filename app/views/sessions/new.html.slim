@@ -1,0 +1,5 @@
+h4 Log in
+= simple_form_for login_path do |form|
+  = form.input :username, required: true
+  = form.input :password, required: true
+  = form.submit "Log in", class: 'btn btn-link'

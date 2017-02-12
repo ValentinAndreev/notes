@@ -6,7 +6,7 @@ div id="#{task.id}"
     b Date:
     =< task.date
     br/
-    b Status:
+    b Executed?
     =< task.status
     br/
     = link_to 'Edit', edit_task_path(task), remote: true

@@ -1,0 +1,5 @@
+- if current_user
+  h4 Welcome #{current_user.username}.
+  = link_to 'Tasks', tasks_path
+- else
+  h4 Hello, you must register or login to continue.
