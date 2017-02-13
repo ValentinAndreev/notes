@@ -1,8 +1,8 @@
-div id="#{plan.id}"
-  p
-    b Plan:
-    =< link_to "#{plan.name}", plan_tasks_path(plan)
-    br/
-    = link_to 'Edit name', edit_plan_path(plan), remote: true
-    =< link_to 'Delete', plan_path(plan), method: :delete, data: { confirm: 'Are you sure?' }, remote: true
-    hr/
+.item[data-item-id="#{plan.id}"]
+  li.ui-widget.ui-state-default
+    #text
+      b Plan:
+      =< link_to "#{plan.name}", plan_tasks_path(plan), style: 'color:#337AB7;'
+      p
+      = link_to 'Edit name', edit_plan_path(plan), style: 'color:#337AB7;', remote: true
+      =< link_to 'Delete', plan_path(plan), style: 'color:#337AB7;', method: :delete, data: { confirm: 'Are you sure?' }, remote: true

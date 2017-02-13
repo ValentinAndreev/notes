@@ -1,7 +1,8 @@
-=> link_to 'Return to plans', plans_path
-hr/
+p
+  => link_to 'Return to plans', plans_path
 .tasks
   = render @tasks 
-=> link_to 'New task', new_plan_task_path(@plan), remote: true  
-= link_to 'Close form', '#', id: 'close'
-#form
+p  
+  => link_to 'New task', new_plan_task_path(@plan), remote: true  
+  = link_to 'Close form', '#', id: 'close'
+  #form

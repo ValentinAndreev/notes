@@ -52,6 +52,8 @@ end
 gem 'slim'
 gem 'simple_form'
 gem 'bcrypt'
+gem 'jquery-ui-rails'
+gem 'ranked-model'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

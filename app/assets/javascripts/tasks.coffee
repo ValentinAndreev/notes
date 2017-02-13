@@ -4,6 +4,8 @@
 
 
 $ ->
+  $("#sortable").disableSelection()  
+
   $('#close').click ->   
     $('#close').hide()  
     $('#form').fadeOut()

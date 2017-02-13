@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'logout' => 'sessions#destroy', as: :logout   
   resources :plans do
     resources :tasks
+    post :update_row_order, on: :collection
   end
   resources :users
 end
