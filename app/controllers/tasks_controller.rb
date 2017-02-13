@@ -2,11 +2,21 @@ class TasksController < ApplicationController
   before_action :set
 
   def index
-    @tasks = @plan.tasks.all
+    @tasks = @plan.tasks.all.order(:status, :date)
     respond_to do |format|
       format.html
       format.js
     end    
+  end
+
+  def executed
+    @task.update_attributes!(status: true)
+    redirect_to plan_tasks_path(@plan)
+  end
+
+  def not_executed
+    @task.update_attributes!(status: false)
+    redirect_to plan_tasks_path(@plan)
   end
 
   def new

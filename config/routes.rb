@@ -8,5 +8,7 @@ Rails.application.routes.draw do
     resources :tasks
     post :update_row_order, on: :collection
   end
+  get 'executed/:plan_id/:id' => 'tasks#executed', as: :executed
+  get 'not_executed/:plan_id/:id' => 'tasks#not_executed', as: :not_executed
   resources :users
 end

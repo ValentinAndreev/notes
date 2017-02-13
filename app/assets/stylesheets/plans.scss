@@ -9,11 +9,15 @@
 }
 
 .item {
-  margin:5px;  
+  margin:10px;  
 }  
 
 #text {
-  font-size:14px; 
+  font-size:18px; 
   padding:5px;  
   margin:5px;  	
+  border-color: #98B2DC;
+  border-radius: 3px;
+  box-shadow: 0 0 5px #98B2DC;	
+  padding: 0.5em 1em;  
 }

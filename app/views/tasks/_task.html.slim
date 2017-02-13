@@ -1,13 +1,19 @@
 div id="#{task.id}"
-  b Task:
-  =< task.text
-  br/
+  - status = task_status(@plan,task)
+  - if task.status
+    #task-executed
+      b Task: 
+      =< task.text
+  - else
+    #task-not-executed
+      b Task: 
+      =< task.text
   b Date:
   =< task.date
   br/
-  b Executed?
-  =< task.status
+  b =< status[:status]
   br/
   = link_to 'Edit', edit_plan_task_path(@plan.id, task), remote: true
+  =< link_to status[:link_name], status[:path]
   =< link_to 'Delete', plan_task_path(@plan.id, task), method: :delete, data: { confirm: 'Are you sure?' }, remote: true
   hr/

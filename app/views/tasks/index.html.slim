@@ -1,6 +1,7 @@
 p
   => link_to 'Return to plans', plans_path
 .tasks
+  h4 Tasks for plan: #{@plan.name}
   = render @tasks 
 p  
   => link_to 'New task', new_plan_task_path(@plan), remote: true  

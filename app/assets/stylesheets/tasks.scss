@@ -7,3 +7,13 @@
 }
 
 textarea { resize: none; }
+
+#task-not-executed {
+  font-size: 16px;
+  color:brown;
+}
+
+#task-executed {
+  font-size: 16px;
+  text-decoration:line-through;
+}
