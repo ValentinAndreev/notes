@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170214072107) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "plans", force: :cascade do |t|
     t.string   "name"
     t.integer  "user_id"
@@ -19,7 +22,7 @@ ActiveRecord::Schema.define(version: 20170214072107) do
     t.datetime "updated_at",                  null: false
     t.integer  "row_order"
     t.string   "order",      default: "date"
-    t.index ["user_id"], name: "index_plans_on_user_id"
+    t.index ["user_id"], name: "index_plans_on_user_id", using: :btree
   end
 
   create_table "tasks", force: :cascade do |t|
@@ -30,7 +33,7 @@ ActiveRecord::Schema.define(version: 20170214072107) do
     t.datetime "updated_at",                 null: false
     t.integer  "user_id"
     t.integer  "plan_id"
-    t.index ["plan_id"], name: "index_tasks_on_plan_id"
+    t.index ["plan_id"], name: "index_tasks_on_plan_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -41,4 +44,5 @@ ActiveRecord::Schema.define(version: 20170214072107) do
     t.datetime "updated_at",    null: false
   end
 
+  add_foreign_key "plans", "users"
 end
