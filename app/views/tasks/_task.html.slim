@@ -14,6 +14,6 @@ div id="#{task.id}"
   b =< status[:status]
   br/
   = link_to 'Edit', edit_plan_task_path(@plan.id, task), remote: true
-  =< link_to status[:link_name], status[:path]
   =< link_to 'Delete', plan_task_path(@plan.id, task), method: :delete, data: { confirm: 'Are you sure?' }, remote: true
+  =< link_to status[:link_name], status[:path], remote: true
   hr/

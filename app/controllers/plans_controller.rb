@@ -1,13 +1,13 @@
 class PlansController < ApplicationController
-  before_action :set
   before_action :require_login
+  before_action :set
 
   def index
     @plans = current_user.plans.rank(:row_order).all
     respond_to do |format|
       format.html
       format.js
-    end    
+    end
   end
 
   def update_row_order
@@ -45,15 +45,7 @@ class PlansController < ApplicationController
     @plan = current_user.plans.find(params[:id]) if params[:id]
   end
   
-  def require_login
-    redirect_to '/' unless current_user
-  end
-
   def plan_params
     params.require(:plan).permit(:name, :row_order_position, :plan_id)
-  end
-
-  def current_user
-    User.find(session[:user_id]) if session[:user_id]
   end
 end

@@ -1,5 +1,6 @@
 p
   => link_to 'Return to plans', plans_path
+  = link_to 'Reorder', reorder_path(@plan)
 .tasks
   h4 Tasks for plan: #{@plan.name}
   = render @tasks 

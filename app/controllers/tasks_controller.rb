@@ -2,21 +2,25 @@ class TasksController < ApplicationController
   before_action :set
 
   def index
-    @tasks = @plan.tasks.all.order(:status, :date)
+    @tasks = @plan.tasks.all.order(@plan.order)
     respond_to do |format|
       format.html
       format.js
-    end    
+    end
+  end
+
+  def reorder
+    @plan.order = @plan.order == 'date' ? 'status' : 'date'
+    @plan.save
+    redirect_to plan_tasks_path(@plan), notice: 'Ordering tasks by ' + @plan.order
   end
 
   def executed
     @task.update_attributes!(status: true)
-    redirect_to plan_tasks_path(@plan)
   end
 
   def not_executed
     @task.update_attributes!(status: false)
-    redirect_to plan_tasks_path(@plan)
   end
 
   def new
@@ -48,7 +52,7 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:text, :date, :status, :plan_id)
+    params.require(:task).permit(:text, :date, :status, :plan_id, :order)
   end
 
   def current_user
