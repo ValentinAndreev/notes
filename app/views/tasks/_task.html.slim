@@ -1,19 +1,20 @@
 div id="#{task.id}"
+  date[data-item=time_to_js(task.date) data-task=task.id]
   - status = task_status(@plan,task)
+  .add
+    b Task:
   - if task.status
-    #task-executed
-      b Task: 
+    #task-executed  
       =< task.text
   - else
-    #task-not-executed
-      b Task: 
+    #task-not-executed 
       =< task.text
-  b Date:
-  =< task.date
-  br/
-  b =< status[:status]
-  br/
-  = link_to 'Edit', edit_plan_task_path(@plan.id, task), remote: true
-  =< link_to 'Delete', plan_task_path(@plan.id, task), method: :delete, data: { confirm: 'Are you sure?' }, remote: true
-  =< link_to status[:link_name], status[:path], remote: true
-  hr/
+  .add
+    b Date:
+    =< task.date
+    br/
+    b =< status[:status]
+  p
+    = link_to 'Edit', edit_plan_task_path(@plan.id, task), remote: true
+    =< link_to 'Delete', plan_task_path(@plan.id, task), method: :delete, data: { confirm: 'Are you sure?' }, remote: true
+    =< link_to status[:link_name], status[:path], remote: true

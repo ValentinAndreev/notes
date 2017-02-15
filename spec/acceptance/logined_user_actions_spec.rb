@@ -67,13 +67,5 @@ feature 'Logined user actions' do
     click_on 'Mark as not executed'
     expect(page).to_not have_selector('#task-executed')
     expect(page).to have_selector('#task-not-executed')
-  end  
-
-  scenario 'task reorder' do
-    visit plan_tasks_path(plan)
-    click_on 'Reorder'
-    expect(page).to have_content 'Ordering tasks by status'
-    click_on 'Reorder'
-    expect(page).to have_content 'Ordering tasks by date'
   end
 end

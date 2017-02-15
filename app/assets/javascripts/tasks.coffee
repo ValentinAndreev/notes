@@ -4,8 +4,18 @@
 
 
 $ ->
-  $("#sortable").disableSelection()  
+  $("#sortable").disableSelection()
 
-  $('#close').click ->   
-    $('#close').hide()  
-    $('#form').fadeOut() 
+  $('#close').click ->
+    $('#close').hide()
+    $('#form').fadeOut()
+
+  $('#short').click ->
+    $('#short').hide()
+    $('#full').show()
+    $('.add').fadeOut()
+
+  $('#full').click ->   
+    $('#full').hide()
+    $('#short').show()
+    $('.add').fadeIn()

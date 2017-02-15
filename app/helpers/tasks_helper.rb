@@ -6,4 +6,8 @@ module TasksHelper
       { status: 'Not executed', link_name: 'Mark as executed', path: executed_path(plan, task) }
     end
   end
+
+  def time_to_js(date)
+    Time.parse(date.strftime("%Y-%m-%d %I:%M%P")).utc.to_i*1000
+  end
 end

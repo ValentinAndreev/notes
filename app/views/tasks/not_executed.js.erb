@@ -1,1 +1,4 @@
 $('#<%= @task.id %>').replaceWith("<%= j render @task %>");
+if ($('#short').is(':hidden')) {
+$('.add').hide();
+}

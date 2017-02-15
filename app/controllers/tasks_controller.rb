@@ -2,17 +2,11 @@ class TasksController < ApplicationController
   before_action :set
 
   def index
-    @tasks = @plan.tasks.all.order(@plan.order)
+    @tasks = @plan.tasks.all.order(:date)
     respond_to do |format|
       format.html
       format.js
     end
-  end
-
-  def reorder
-    @plan.order = @plan.order == 'date' ? 'status' : 'date'
-    @plan.save
-    redirect_to plan_tasks_path(@plan), notice: 'Ordering tasks by ' + @plan.order
   end
 
   def executed

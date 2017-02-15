@@ -1,3 +1,22 @@
 $('#close').hide();
 $('#form').fadeOut();
-$('.tasks').append("<%= j render @task %>");
+
+task_date = new Date(<%= time_to_js(@task.date) %>);
+added = false;
+$("date").each(function(i,element) {
+    js_date = new Date($(element).data("item"));
+	if (js_date > task_date) { 
+	  task_id = "#" + $(element).data("task");
+	  $(task_id).prepend("<%= j render @task %>");
+	  added = true;
+      return false;
+	};
+});
+
+if (added != true) {
+  $('.tasks').append("<%= j render @task %>");
+}
+
+if ($('#short').is(':hidden')) {
+  $('.add').hide();
+}
