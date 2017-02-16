@@ -17,5 +17,5 @@ class User < ActiveRecord::Base
   def self.authenticate(username, password)
     user = User.where(username: username).first
     user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt) ? user : nil
-  end 
+  end
 end

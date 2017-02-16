@@ -17,8 +17,7 @@ class PlansController < ApplicationController
     head :ok
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @plan = current_user.plans.new
@@ -28,8 +27,7 @@ class PlansController < ApplicationController
     @plan = current_user.plans.create!(plan_params)
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @plan.update_attributes!(plan_params)
@@ -40,11 +38,11 @@ class PlansController < ApplicationController
   end
 
   private
-  
+
   def set
     @plan = current_user.plans.find(params[:id]) if params[:id]
   end
-  
+
   def plan_params
     params.require(:plan).permit(:name, :row_order_position, :plan_id)
   end

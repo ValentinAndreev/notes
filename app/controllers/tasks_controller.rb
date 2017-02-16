@@ -21,8 +21,7 @@ class TasksController < ApplicationController
     @task = @plan.tasks.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @task = @plan.tasks.new(task_params)
