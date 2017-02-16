@@ -47,10 +47,20 @@ feature 'Logined user actions' do
     expect(page).to have_content 'Test task edited'
   end 
 
+  scenario 'created tasks must be ordered by date', js: true do
+    visit plan_tasks_path(plan)
+    click_on 'New task'
+    fill_in 'Text', with: 'Test task'
+    select '2016', from: 'Date'
+    click_on 'Create Task'
+    expect(page).to have_content 'Test task'    
+    expect(find(".tasks").first("div")[:id]).to eq('2') #Expect second task will be showed first   
+  end
+
   scenario 'user can delete tasks', js: true do
     visit plan_tasks_path(plan)
     click_on 'Delete'
-    expect(page).to_not have_content 'Text'
+    expect(page).to_not have_content 'another text'
   end 
 
   scenario 'task mark as executed', js: true do

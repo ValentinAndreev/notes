@@ -9,9 +9,9 @@ $("date").each(function(i,element) {
     js_date = new Date($(element).data("item"));
 	if (js_date > task_date) { 
 	  task_id = "#" + $(element).data("task");
-	  $(task_id).prepend("<%= j render @task %>");
+	  $(task_id).before("<%= j render @task %>");
 	  added = true;
-      return false;
+    return false;
 	};
 });
 
