@@ -1,4 +1,4 @@
-$('#form').html("<%= j render 'form_new' %>");
+$('#form').html("<%= j render 'form', type: [@plan, @plan.tasks.build] %>");
 $('#form').fadeIn();
 $('#close').show();
 $("textarea").focus();

@@ -1,4 +1,4 @@
-$('#form').html("<%= j render 'form_edit' %>");
-$('#form').show();
+$('#form').html("<%= j render 'form', type: [@plan, @task] %>");
+$('#form').fadeIn();
 $('#close').show();
 $("textarea").focus();
