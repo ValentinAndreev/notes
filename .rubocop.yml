@@ -4,6 +4,8 @@ AllCops:
     - 'db/*'
     - 'config/*/*'
     - 'spec/spec_helper.rb'
+    - "**/*_spec.rb"
+  DisplayCopNames: true
 
 Documentation:
   Enabled: false
