@@ -10,4 +10,4 @@ Learning to use:
 * Testing ajax requests (jQuery, jQuery UI with PhantomJS - Poltergeist for Capybara).
 * Slim for templates (gem 'slim').
 * Rubocop as code analyzer.
-* Other: gem 'better_errors' (development), gem 'bcrypt' (for simplest authentification).
+* Other: gem 'better_errors' (development), gem 'bcrypt' (for simplest authentification), gem 'ranked-model' (for sorting model from jQuery UI sortable).
