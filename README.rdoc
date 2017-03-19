@@ -5,4 +5,8 @@
 
 * Build on Ruby 2.4.0 and Rails 5.0.1 with PostgeSQL 9.5.
 
-Learning to use and testing ajax requests (jQuery, jQuery UI, PhantomJS - poltergeist for Capybara).
+Learning to use:
+* AJAX.
+* Testing ajax requests (jQuery, jQuery UI with PhantomJS - Poltergeist for Capybara).
+* Slim for templates (gem 'slim').
+* Other: gem 'better_errors' (development), gem 'bcrypt' (for simplest authentification).
